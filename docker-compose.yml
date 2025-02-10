@@ -9,6 +9,7 @@ services:
       - "6080:6080"  # noVNC web interface
       - "5900:5900"  # VNC port
       - "9222:9222"  # Chrome remote debugging port
+      - "8000:8000"  # API Server port
     environment:
       - OPENAI_ENDPOINT=${OPENAI_ENDPOINT:-https://api.openai.com/v1}
       - OPENAI_API_KEY=${OPENAI_API_KEY:-}
@@ -31,8 +32,8 @@ services:
       - VNC_PASSWORD=${VNC_PASSWORD:-vncpassword}
       - CHROME_DEBUGGING_PORT=9222
       - CHROME_DEBUGGING_HOST=localhost
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+#    volumes:
+#      - /tmp/.X11-unix:/tmp/.X11-unix
     restart: unless-stopped
     shm_size: '2gb'
     cap_add:
