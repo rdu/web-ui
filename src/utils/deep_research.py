@@ -200,6 +200,8 @@ Provide your output as a JSON formatted list. Each item in the list must adhere 
                     system_prompt_class=CustomSystemPrompt,
                     agent_prompt_class=CustomAgentMessagePrompt,
                     max_actions_per_step=5,
+                    max_failures=100,
+                    retry_delay=60,
                     controller=controller,
                     agent_state=agent_state
                 )
@@ -223,6 +225,8 @@ Provide your output as a JSON formatted list. Each item in the list must adhere 
                     system_prompt_class=CustomSystemPrompt,
                     agent_prompt_class=CustomAgentMessagePrompt,
                     max_actions_per_step=5,
+                    max_failures=100,
+                    retry_delay=60
                     controller=controller,
                     agent_state=agent_state
                 ) for task in query_tasks]
