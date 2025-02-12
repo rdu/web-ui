@@ -26,7 +26,7 @@ class TaskStatus:
     CANCELED = "CANCELED"
 
 class LLMConfig(BaseModel):
-    provider: Literal["openai", "anthropic", "google", "azure_openai", "deepseek", "ollama"] = Field(
+    provider: Literal["openai", "anthropic", "google", "azure_openai", "deepseek", "ollama", "mistral"] = Field(
         description="The LLM provider to use"
     )
     model: str = Field(description="The model name to use")
